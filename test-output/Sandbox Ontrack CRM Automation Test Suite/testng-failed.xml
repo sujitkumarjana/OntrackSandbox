@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Sandbox Ontrack CRM Automation Test Suite]">
+  <test name="Sandbox Ontrack CRM Test Cases">
+    <classes>
+      <class name="in.sandbox.ontrack.testcases.LoginPageTest"/>
+    </classes>
+  </test> <!-- Sandbox Ontrack CRM Test Cases -->
+</suite> <!-- Failed suite [Sandbox Ontrack CRM Automation Test Suite] -->
