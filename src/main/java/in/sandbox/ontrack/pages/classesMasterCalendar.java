@@ -68,33 +68,38 @@ public class classesMasterCalendar extends BaseClass {
 		// Select Time
 		WebElement Selecttime = driver.findElement(By.xpath("//div[@id='DDLSessionStartTime_chosen']"));
 		Selecttime.click();
-		/*// ++++++++++++++++++++++++++++++++++++++
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		// ++++++++++++++++++++++++++++++++++++++
-*/		WebElement Timescroll = driver
+		WebElement Timescroll = driver
 				.findElement(By.xpath("//div[@id='DDLSessionStartTime_chosen']//li[text()='" + ClassTimming + "']"));
 		jsScrollTillElementFound(Timescroll);
 		Timescroll.click();
 		
-		//Select Duration
+		// Select Duration
 		driver.findElement(By.xpath("//input[@id='txtDuration']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtDuration']")).sendKeys(Duration);
 		driver.findElement(By.xpath("//select[@id='ddlDurationType']//option[text()='"+ DurationMinsHrs +"']")).click();
+		
+		//Free Event
 		if(FreeEvent.equalsIgnoreCase("Yes")){
 			driver.findElement(By.xpath("//label[@id='lblFree']")).click();
 		}
+		
+		// Client can book through
 		if(PackageBooking.equalsIgnoreCase("Yes")){
 			driver.findElement(By.xpath("//span[@id='chkBookPackages']")).click();
 		}
+		
+		// Group Size
 		driver.findElement(By.xpath("//input[@id='txtGroupSize']")).sendKeys(GroupSize);
+		
+		//Class Details
 		driver.findElement(By.xpath("//textarea[@id='txtSessionDescription']")).sendKeys(ClassDetails);
+		
+		// Selecting Staff
 		jsScrollDown(driver);
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//span[text()='Select Trainer']")).click();
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//li[text()='"+ Staff +"']")).click();
+		
+		// Clicking Submit Button
 		AddClassSubmitBUtton.click();
 		
 	}
