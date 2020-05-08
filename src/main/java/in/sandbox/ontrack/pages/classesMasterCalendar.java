@@ -21,6 +21,8 @@ public class classesMasterCalendar extends BaseClass {
 
 	@FindBy(xpath = "//input[@id='btnAddNewEvent_A']")
 	WebElement AddClassButton;
+	@FindBy(xpath= "//a[@id='btnBookSubmit']")
+	WebElement AddClassSubmitBUtton;
 
 	public String VerifyURL() {
 		return driver.getCurrentUrl();
@@ -93,5 +95,6 @@ public class classesMasterCalendar extends BaseClass {
 		jsScrollDown(driver);
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//span[text()='Select Trainer']")).click();
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//li[text()='"+ Staff +"']")).click();
+		AddClassSubmitBUtton.click();
 	}
 }
