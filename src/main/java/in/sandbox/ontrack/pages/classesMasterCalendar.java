@@ -96,5 +96,6 @@ public class classesMasterCalendar extends BaseClass {
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//span[text()='Select Trainer']")).click();
 		driver.findElement(By.xpath("//div[@id='ddlStaff_chosen']//li[text()='"+ Staff +"']")).click();
 		AddClassSubmitBUtton.click();
+		
 	}
 }
